@@ -1,0 +1,158 @@
+#Disable directory indexs
+Options -Indexes
+
+
+
+
+RewriteEngine on
+RewriteRule ^logout logout.php [L]
+RewriteRule ^contact-us contact.php [L]
+RewriteRule ^about-us aboutus.php [L]
+RewriteRule ^available-courses available-courses.php [L]
+
+
+
+
+
+
+
+
+
+#Admission
+RewriteCond %{REQUEST_URI} "/main/" [OR]
+
+RewriteRule ^entry-requirments main/admission/entry-requirments.php [L]
+RewriteRule ^application-form main/admission/application-form.php [L]
+RewriteRule ^submit-form main/admission/forms/submit-form.php [L]
+RewriteRule ^proceed-application-form main/admission/proceed-application-form.php [L]
+RewriteRule ^print-application main/admission/print-application.php [L]
+RewriteRule ^admission-checker-auth main/admission/admission-checker.php [L]
+RewriteRule ^admission-checker-data main/include/admission-data.php [L]
+RewriteRule ^admission-status main/admission/status-of-admission.php [L]
+RewriteRule ^admission-letter main/admission/letter-of-admission.php [L]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#portal
+RewriteRule ^validate-admission main/portal/validateadmission.php [L]
+RewriteRule ^bio-data-form main/portal/bio-dataform.php [L]
+RewriteRule ^biodata-form main/portal/forms/biodata-form.php [L]
+RewriteRule ^bio-data-print-out main/portal/bio-data-print.php [L]
+RewriteRule ^course-form-validation main/portal/course-form-validation.php [L]
+RewriteRule ^datacourse-form main/portal/forms/datacourse-form.php [L]
+RewriteRule ^course-registration main/portal/course-form-registration.php [L]
+RewriteRule ^course_registration main/portal/forms/course_registration.php [L]
+RewriteRule ^print-course main/portal/print-course-form.php [L]
+RewriteRule ^time-table-school-calender main/portal/time-table-calender.php [L]
+
+
+
+
+
+
+
+
+
+#Main
+RewriteRule ^login main/sign-in.php [L]
+RewriteRule ^sign-in-form main/forms/sign_in_form.php [L]
+RewriteRule ^news-in-details/(.*) main/news.php?slug=$1 [L]
+RewriteRule ^news-search main/search-news.php [L]
+RewriteRule ^gallery main/gallery.php [L]
+RewriteRule ^contact-us forms/contactus.php [L]
+RewriteRule ^forget-password main/forget-password.php [L]
+
+
+
+
+#Student Page
+RewriteRule ^student_dashboard main/student_dashboard/index.php [L]
+RewriteRule ^print-bio-data main/student_dashboard/re-print-bio.php [L]
+RewriteRule ^re-print-course-form main/student_dashboard/reprint-course-form.php [L]
+RewriteRule ^sessional-result main/student_dashboard/result-print-out.php [L]
+
+RewriteRule ^school-bill-checker main/student_dashboard/school-bill.php [L]
+
+
+
+
+
+
+
+
+
+
+#Admin
+RewriteRule ^home admin_dashboard/index.php [L]
+RewriteRule ^menu-page admin_dashboard/dashboard.php [L]
+RewriteRule ^session-verify admin_dashboard/forms/session_verify.php [L]
+RewriteRule ^portal-setting admin_dashboard/forms/portal-setting.php [L]
+RewriteRule ^deleting admin_dashboard/forms/data-deletion.php [L]
+RewriteRule ^post-news admin_dashboard/post-news.php [L]
+RewriteRule ^students-bio-data-table admin_dashboard/biodata/students-bio-data-table.php [L]
+RewriteRule ^edit-student-bio-data/(.*) admin_dashboard/biodata/edit-student-bio-data.php?app_id=$1 [L]
+RewriteRule ^admin-bio-data-form admin_dashboard/biodata/forms/bio_data_form.php [L]
+RewriteRule ^deleting admin_dashboard/forms/data-deletion.php [L]
+RewriteRule ^course-registrated-list admin_dashboard/course/course-registrated-list.php [L]
+RewriteRule ^edit-student-courses/(.*) admin_dashboard/course/edit-student-courses.php?id=$1 [L]
+RewriteRule ^admin-cours-registration admin_dashboard/course/forms/admin-cours-registration.php [L]
+RewriteRule ^slider-settings admin_dashboard/slider.php [L]
+RewriteRule ^portal-setting admin_dashboard/forms/portal-setting.php [L]
+RewriteRule ^students-email-password admin_dashboard/students-email-password.php [L]
+RewriteRule ^data-file admin_dashboard/include/data-file.php [L]
+RewriteRule ^exam-clearance admin_dashboard/exam-clearance.php [L]
+RewriteRule ^course-result-uploader admin_dashboard/course/course-result-uploader.php [L]
+RewriteRule ^candidate-list admin_dashboard/admission/candidate-list-table.php [L]
+RewriteRule ^edit-candidate-data/(.*) admin_dashboard/admission/edit-candidate-data.php?app_id=$1 [L]
+RewriteRule ^admin-admission-edit admin_dashboard/admission/forms/admission-edit.php [L]
+RewriteRule ^preview-results admin_dashboard/admission/preview-results.php [L]
+RewriteRule ^change-of-course admin_dashboard/admission/change-of-course.php [L]
+RewriteRule ^school-gallery admin_dashboard/school-gallery.php [L]
+RewriteRule ^manage-fee admin_dashboard/school-fee.php [L]
+RewriteRule ^manage-about-us admin_dashboard/manage-about-us.php [L]
+RewriteRule ^manage-timetable admin_dashboard/manage-timetable.php [L]
+RewriteRule ^school-table-time admin_dashboard/forms/time-table.php [L]
+
+RewriteRule ^course-result-compute admin_dashboard/course/course-result-compute.php [L]
+
+
+
+
+
+#Registrar
+RewriteRule ^registrar-home registrar_dashboard/index.php [L]
+RewriteRule ^reg-menu-page registrar_dashboard/dashboard.php [L]
+RewriteRule ^reg-session-verify registrar_dashboard/forms/session_verify.php [L]
+
+
+RewriteRule ^reg-portal-setting registrar_dashboard/forms/portal-setting.php [L]
+RewriteRule ^reg-deleting registrar_dashboard/forms/data-deletion.php [L]
+RewriteRule ^reg-deleting registrar_dashboard/forms/data-deletion.php [L]
+RewriteRule ^reg-portal-setting registrar_dashboard/forms/portal-setting.php [L]
+RewriteRule ^reg-data-file registrar_dashboard/include/data-file.php [L]
+RewriteRule ^reg-candidate-list registrar_dashboard/admission/candidate-list-table.php [L]
+RewriteRule ^reg-edit-candidate-data/(.*) registrar_dashboard/admission/edit-candidate-data.php?app_id=$1 [L]
+RewriteRule ^reg-admin-admission-edit registrar_dashboard/admission/forms/admission-edit.php [L]
+RewriteRule ^reg-preview-results registrar_dashboard/admission/preview-results.php [L]
+RewriteRule ^reg-change-of-course registrar_dashboard/admission/change-of-course.php [L]
+
