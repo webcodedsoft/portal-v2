@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/asscoed/public_html/ #Where to deploy
+    - /bin/cp -a $DEPLOYPATH #Deploy entire file
