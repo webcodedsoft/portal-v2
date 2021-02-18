@@ -234,11 +234,11 @@ $department = mysqli_real_escape_string($con, $_POST['department']);
 $address = ucfirst(mysqli_real_escape_string($con, $_POST['address']));
 
 
-    $sql="UPDATE applicationform SET FirstName='$firstname', MiddleName='$middlename', LastName='$lastname', Email='$email', PhoneNumber='$phonenumber', Marital='$marital', Gender='$gender', Dob='$dob', Country='$country', State='$state', City='$city', Address='$address', Session='$session', Utmeno='$utmeno', JambScore='$jambscore', CollegeChoice='$collegechoice', School='$school', Department='$department', Status='Complete' WHERE Application_id = '$app_id_session' ";//
-            if(!$qsql=mysqli_query($con,$sql))
-            {
-              echo mysqli_error($con);
-            }
+    $sql="UPDATE applicationform SET FirstName='$firstname', MiddleName='$middlename', LastName='$lastname', Email='$email', PhoneNumber='$phonenumber', Marital='$marital', Gender='$gender', Dob='$dob', Country='$country', State='$state', City='$city', Address='$address', Session='$session', Utmeno='$utmeno', JambScore='$jambscore', CollegeChoice='$collegechoice', School='$school', Department='$department', Admission='Admitted', Status='Complete' WHERE Application_id = '$app_id_session' ";//
+    if(!$qsql=mysqli_query($con,$sql))
+    {
+      echo mysqli_error($con);
+    }
 
 
     $sqlp="UPDATE cardpin SET STATUS='$phonenumber' WHERE SERIALS = '$pin_session' ";//
